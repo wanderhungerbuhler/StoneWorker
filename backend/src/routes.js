@@ -1,0 +1,18 @@
+import { Router } from 'express';
+
+import WorkersController from './app/controllers/WorkersController';
+
+const routes = new Router();
+
+/* Return all Workers / Create a Workers */
+routes.get('/api/workers', WorkersController.index);
+routes.get('/api/workers/:office', WorkersController.show);
+routes.post('/api/workers', WorkersController.store);
+
+/* Update a workers with base in your 'ID' */
+routes.put('/api/workers', WorkersController.update);
+
+/* Delete a workers with base in your 'ID' */
+routes.delete('/api/workers/:id', WorkersController.delete);
+
+export default routes;
