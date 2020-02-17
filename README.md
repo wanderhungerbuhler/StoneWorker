@@ -30,8 +30,8 @@ No prompt de comando, adicione a seguinte linha de código `docker run --name st
 
 Após executar o `yarn install` nas respectivas pastas `backend` e `frontend`, e ter feito a imagem do `Postgres` no Docker, execute os comandos `yarn start` ou `yarn dev` na pasta backend e `yarn start` na pasta frontend para iniciar a aplicação.
 
-Quando a aplicação estiver online, faça o cadastro dos funcionários onde a princípio você deverá seguir o seguinte modelo para o cadastro
-Nome, Idade, Função (neste caso em específico) você deverá cadastrar o respectivo funcionário nas seguintes funções:
+Quando a aplicação estiver online, faça o cadastro dos funcionários onde a princípio, você deverá seguir o seguinte modelo para o cadastro
+`Nome`, `Idade`, `Função` (neste caso em específico) você deverá cadastrar o respectivo funcionário, nas seguintes funções:
 
 -Desenvolvedor Sênior
 -Desenvolvedor Pleno
