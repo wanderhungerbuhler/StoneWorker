@@ -43,4 +43,4 @@ Obs: Essas opções podem ser visualizadas antes do cadastrado, na aba Filtrar F
 
 ---
 
-Developed by by Wander Hungerbühler :wave:
+Developed by Wander Hungerbühler :wave:
