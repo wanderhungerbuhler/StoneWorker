@@ -14,7 +14,12 @@ Um funcionário deve possuir como atributos: `Id`, `Idade`, `Nome` e `Cargo`. Sa
 - Sequelize (Utilizando PostgreSQL);
 - Yup
 
-### **Inicializar o Projeto**
+### **Ver aplicação online**
+
+[StoneWorker](https://stoneworker.netlify.com/)
+
+
+## **Executar a aplicação no Desktop**
 
 Faça o git clone do repositório e em seguida faça às configurações abaixo:
 
