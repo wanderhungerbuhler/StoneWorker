@@ -1,8 +1,8 @@
-import Sequelize from 'sequelize';
+const Sequelize = require('sequelize');
 
-import Workers from '../app/models/Workers';
+const Workers = require('../app/models/Workers');
 
-import databaseConfig from '../config/database';
+const databaseConfig = require('../config/database');
 
 const models = [Workers];
 
@@ -14,8 +14,8 @@ class Database {
   init() {
     this.connection = new Sequelize(databaseConfig);
 
-    models.map((model) => model.init(this.connection));
+    models.map(model => model.init(this.connection));
   }
 }
 
-export default new Database();
+module.exports = new Database();

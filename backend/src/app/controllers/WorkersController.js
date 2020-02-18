@@ -1,5 +1,5 @@
-import * as Yup from 'yup';
-import Workers from '../models/Workers';
+const Yup = require('yup');
+const Workers = require('../models/Workers');
 
 class WorkersController {
   async index(req, res) {
@@ -47,32 +47,32 @@ class WorkersController {
       return res.status(400).json({ error: 'A validação falhou... ' });
     }
 
-    const { id } = req.body;
+    const { index } = req.params;
 
-    const user = await Workers.findByPk(id);
+    const user = await Workers.findByPk(index);
 
-    const { name, age, office } = await user.update(req.body);
+    if (!user) {
+      return res.status(400).json({ error: 'Visit does not exists' });
+    }
 
-    return res.json({ message: 'Funcionário atualizado com sucesso!' });
+    const { id, name, age, office } = await user.update(req.body);
+
+    return res.json({ id, name, age, office });
   }
 
   async delete(req, res) {
-    const schema = Yup.object().shape({
-      id: Yup.number()
-        .positive()
-        .required(),
-    });
+    const { index } = req.params;
 
-    if (!(await schema.isValid(req.params))) {
-      return res.status(400).json({ error: 'ID for delete is invalid...' });
+    const worker = await Workers.findByPk(index);
+
+    if (!worker) {
+      return res.status(400).json({ error: 'Worker does not exists' });
     }
 
-    const { id } = req.params;
-
-    await Workers.destroy({ where: { id } });
+    await worker.destroy();
 
     return res.json({ message: 'Funcionário removido com sucesso!' });
   }
 }
 
-export default new WorkersController();
+module.exports = new WorkersController();

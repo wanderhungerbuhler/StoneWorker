@@ -1,6 +1,6 @@
-import { Router } from 'express';
+const { Router } = require('express');
 
-import WorkersController from './app/controllers/WorkersController';
+const WorkersController = require('./app/controllers/WorkersController');
 
 const routes = new Router();
 
@@ -10,9 +10,9 @@ routes.get('/api/workers/:office', WorkersController.show);
 routes.post('/api/workers', WorkersController.store);
 
 /* Update a workers with base in your 'ID' */
-routes.put('/api/workers', WorkersController.update);
+routes.put('/api/workers/:index', WorkersController.update);
 
 /* Delete a workers with base in your 'ID' */
-routes.delete('/api/workers/:id', WorkersController.delete);
+routes.delete('/api/workers/:index', WorkersController.delete);
 
-export default routes;
+module.exports = routes;
